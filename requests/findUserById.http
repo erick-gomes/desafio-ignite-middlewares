@@ -1,0 +1,7 @@
+// Substituir :id pelo uuidv4
+// Verificar se um usuário existe
+GET http://localhost:3333/users/:id
+
+###
+
+GET http://localhost:3333/users/3a521440-20f9-4988-8231-1f60e47ac75f
