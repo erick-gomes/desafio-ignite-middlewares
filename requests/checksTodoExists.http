@@ -1,0 +1,34 @@
+
+// Substituir id pelo uuidv4 do todo
+PUT http://localhost:3333/todos/:id
+
+###
+PUT http://localhost:3333/todos/2b87006a-da57-403e-b409-ca95c91d6c62
+Content-Type: application/json
+username: Erick8080
+
+{
+    "title": "Fazer o almoço",
+    "deadline": "2021-08-20"
+}
+
+###
+// Todo é validado, mas se não encontrado, retorna 'Todo is not found'
+PUT http://localhost:3333/todos/2a87006a-da57-403e-b409-ca95c91d6c62
+Content-Type: application/json
+username: Erick8080
+
+{
+    "title": "Fazer o almoço",
+    "deadline": "2021-08-20"
+}
+
+###
+
+// Substituir id pelo uuidv4 do todo
+PATCH http://localhost:3333/todos/:id/done
+
+###
+
+PATCH http://localhost:3333/todos/2b87006a-da57-403e-b409-ca95c91d6c62/done
+username: Erick8080

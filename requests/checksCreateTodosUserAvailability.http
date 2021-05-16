@@ -1,0 +1,19 @@
+POST http://localhost:3333/todos
+Content-Type: application/json
+username: Erick8080
+
+{
+    "title": "Varrer o chão",
+    "deadline": "2021-08-19"
+}
+
+###
+GET http://localhost:3333/todos
+username: Erick8080
+
+###
+// Substituir :id pelo uuidv4 do usuário
+PATCH http://localhost:3333/users/:id/pro
+
+###
+PATCH http://localhost:3333/users/f9e7d152-69e3-4c3e-8354-044c3cc7f576/pro
