@@ -20,12 +20,17 @@ function checksExistsUserAccount(request, response, next) {
 }
 
 function checksCreateTodosUserAvailability(request, response, next) {
-  // Complete aqui
+  const { user } = request;
+  const todoAvailability = user.pro || user.todos.length < 10;
+  if (!todoAvailability) {
+    return response.status(403).json({ error: 'Todos limit exceeded' });
+  }
+  next();
 }
 
 function checksTodoExists(request, response, next) {
   const { username } = request.headers;
-  const { idTodo } = request.params;
+  const { id: idTodo } = request.params;
   const user = users.find(user => user.username === username);
 
   if (!user) 
